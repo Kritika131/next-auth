@@ -44,7 +44,7 @@ const SignInForm = () => {
     // console.log(signInData);
 
     // alert("invalid credentials!");
-    console.log("signinData-", signInData);
+    // console.log("signinData-", await signInData.json());
     if (!signInData) {
       alert("invalid credentials!");
     } else {
@@ -54,7 +54,11 @@ const SignInForm = () => {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        autoComplete="off"
+        className="space-y-4"
+      >
         <div>
           <FormField
             control={form.control}

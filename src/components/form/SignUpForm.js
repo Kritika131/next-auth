@@ -59,14 +59,15 @@ const SignUpForm = () => {
         password: values.password,
       }),
     });
-    // console.log(await response.json());
+    const data = await response.json();
+    console.log(data);
     if (response.ok) {
       router.push("/sign-in");
     } else {
       console.error("Registration Failed!");
       toast({
-        title: "Error",
-        description: "Registration Failed!",
+        title: "Registration Failed!",
+        description: data.message,
         variant: "destructive",
       });
     }
