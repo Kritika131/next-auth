@@ -40,18 +40,39 @@ const SignInForm = () => {
       email: values.email,
       password: values.password,
       callbackUrl: "http://localhost:3000/admin",
+      // onError: async () => alert("Failed"),
     });
-    // console.log(signInData);
+    // console.log(await signInData.json());
+    // const response = await signInData.json();
 
     // alert("invalid credentials!");
     // console.log("signinData-", await signInData.json());
-    if (!signInData) {
-      alert("invalid credentials!");
-    } else {
-      router.refresh();
-      router.push("/admin");
-    }
+    // if (!response) {
+    //   alert("invalid credentials!");
+    // } else {
+    //   router.refresh();
+    //   router.push("/admin");
+    // }
   };
+  // const onSubmit=async (values)=>{
+  //   signIn("credentials", {
+  //     email: values.email,
+  //     password: values.password,
+  //     callbackUrl: "/admin",
+  //     redirect: false, // Prevent automatic redirection
+  //     // Access the error message from the `onError` callback
+  //     message: error?.message,
+  //   })
+  //     .then((result) => {
+  //       // Handle successful sign-in
+  //       alert("sign in successfully!")
+  //     })
+  //     .catch((error) => {
+  //       // Handle additional errors that might occur here
+  //       alert(error.message)
+  //     });
+
+  // }
   return (
     <Form {...form}>
       <form
